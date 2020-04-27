@@ -34,3 +34,21 @@ if (!function_exists('Mtn_Pmp_Gateway_load')) {
 
 // load classes init method
 add_action('init', array('PMProGateway_Rave', 'init'));
+
+if (!class_exists('PMProGateway_Mtn')) {
+    /**
+     * PMProGateway_Rave Class
+     *
+     * Handles Rave integration.
+     *
+     */
+    class PMProGateway_Rave extends PMProGateway
+    {
+
+        function __construct($gateway = null)
+        {
+            $this->gateway = $gateway;
+            $this->gateway_environment =  pmpro_getOption("gateway_environment");
+
+            return $this->gateway;
+        }
