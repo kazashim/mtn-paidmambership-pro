@@ -33,16 +33,16 @@ if (!function_exists('Mtn_Pmp_Gateway_load')) {
 
 
 // load classes init method
-add_action('init', array('PMProGateway_Rave', 'init'));
+add_action('init', array('PMProGateway_Mtn', 'init'));
 
 if (!class_exists('PMProGateway_Mtn')) {
     /**
-     * PMProGateway_Rave Class
+     * PMProGateway_Mtn Class
      *
-     * Handles Rave integration.
+     * Handles Mtn integration.
      *
      */
-    class PMProGateway_Rave extends PMProGateway
+    class PMProGateway_Mtn extends PMProGateway
     {
 
         function __construct($gateway = null)
