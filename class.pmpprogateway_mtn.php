@@ -29,7 +29,7 @@ if (!function_exists('Mtn_Pmp_Gateway_load')) {
             return;
         }
  // plugin links
-add_filter('plugin_action_links', 'PMProGateway_Mtn' 'plugin_action_links'), 10, 2);
+ add_filter('plugin_action_links', array('PMProGateway_Mtn', 'plugin_action_links'), 10, 2);
 
 
 // load classes init method
