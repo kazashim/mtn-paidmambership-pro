@@ -16,7 +16,18 @@ require_once( MOMOPAY_PLUGIN_DIR_PATH . 'mtn-momopay-php-sdk/lib/MomopayEventHan
 use MTN\MomopayEventHandler;
 use MTN\Momopay;
 
+defined('ABSPATH') or die('No script kiddies please!');
+if (!function_exists('Mtn_Pmp_Gateway_load')) {
+    add_action('plugins_loaded', 'Mtn_Pmp_Gateway_load', 20);
 
+    DEFINE('KKD_MTNPMP', "mtn-paidmembershipspro");
+
+    function Mtn_Pmp_Gateway_load() 
+    {
+        // paid memberships pro required
+        if (!class_exists('PMProGateway')) {
+            return;
+        }
  // plugin links
 add_filter('plugin_action_links', 'PMProGateway_Mtn' 'plugin_action_links'), 10, 2);
 
